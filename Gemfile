@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -38,6 +38,18 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
+####MINE######
 #Authlogic see http://blog.pemedeiros.com/authlogic-with-rails-4-2/
 gem 'authlogic', '~> 3.4.2'
 gem 'bcrypt-ruby', '~> 3.1.2' #gem 'bcrypt', '~> 3.1.2'
+#for rspec
+gem 'rspec-rails'
+#for heroku deployment
+gem 'heroku' 
+group :development do
+  gem 'sqlite3'
+end
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'#make our app available on Heroku.
+end
